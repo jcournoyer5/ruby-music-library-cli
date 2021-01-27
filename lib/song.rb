@@ -3,11 +3,21 @@ class Song
 
       @@all = []
 
-     def initialize(name)
+     def initialize(name, artist="artist")
          @name = name
+         @artist = artist
         # @genre = genre
         # save
      end
+     
+    def artist
+        @artist
+    end   
+    
+    def self.new_song_name(name)
+        song = Song.new
+        song.name = name
+    end 
     
     def self.all
         @@all
