@@ -5,6 +5,7 @@ class Genre
     
     def initialize(name)
         @name = name
+        @songs = []
     end
     
     def self.all
@@ -14,6 +15,10 @@ class Genre
     def save
     @@all << self
     end
+    
+    def songs
+        @songs
+    end    
     
     def self.destroy_all
         self.all.clear
