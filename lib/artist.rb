@@ -1,5 +1,5 @@
 class Artist
-        attr_accessor :name
+        attr_accessor :name#, :genres
         attr_reader :songs
     
     @@all = []
@@ -8,6 +8,7 @@ class Artist
     def initialize(name)
         @name = name
         @songs = []
+       # @genres = []
     end
     
     def self.all
@@ -31,7 +32,15 @@ class Artist
     def songs
         @songs
        # Song.all.select {|song| song.artist == self}
-    end    
+    end 
+    
+    def genres
+        songs.collect{ |s| s.genre }.uniq
+        
+        #=(genres)
+    #     @genres = genres
+    #     genres.artists << self #unless genres.artists.include?(self)
+    end
     
     
     def add_song(song)

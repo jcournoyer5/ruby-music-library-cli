@@ -20,6 +20,10 @@ class Genre
         @songs
     end    
     
+    def artists
+    songs.collect{ |s| s.artist }.uniq
+    end
+    
     def self.destroy_all
         self.all.clear
     end  
