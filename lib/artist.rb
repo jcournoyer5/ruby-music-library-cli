@@ -1,6 +1,9 @@
 class Artist
-        attr_accessor :name#, :genres
-        attr_reader :songs
+    
+    extend Concerns::Findable
+    
+    attr_accessor :name#, :genres
+    attr_reader :songs
     
     @@all = []
     @@count = []
