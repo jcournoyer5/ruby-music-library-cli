@@ -50,10 +50,13 @@ class Song
     end    
     
     def self.find_by_name(name)
-     self.all.detect { |song|
-     song.name == name
-    }
-    end   
+    @@all.detect{|artist| artist.name ==name}
+    end
+    
+    #  self.all.detect { |song|
+    #  song.name == name
+    # }
+  
   
     
     def self.find_or_create_by_name(name)
